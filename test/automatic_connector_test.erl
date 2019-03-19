@@ -17,6 +17,6 @@ connector_calls_wombat_api_test() ->
 connector_calls_wombat_self_and_tyr_again_test() ->
 	meck:new(wombat_api, [passthrough]),
 	meck:expect(wombat_api, discover_me, fun(Node,Cookie) -> no_connection end),
-	?assertMatch(reference(),automatic_connector:do_discover(wombat,wombat,10,1000)),
+	?assertMatch(Ref::reference(),automatic_connector:do_discover(wombat,wombat,10,1000)),
 	meck:unload(wombat_api).
 	

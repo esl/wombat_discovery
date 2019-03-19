@@ -1,1 +1,8 @@
-[].
+[{<<"meck">>,
+  {git,"git://github.com/eproxus/meck.git",
+       {ref,"36b208e2d4d7d09ef7ef7f7aa7979da79fa97ef3"}},
+  1},
+ {<<"wombat_discovery">>,
+  {git,"https://github.com/verebecske/wombat_discovery.git",
+       {ref,"976211871c53889660cc657ad8e2c3501984c8d7"}},
+  0}].
