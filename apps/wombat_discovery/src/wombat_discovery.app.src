@@ -1,0 +1,16 @@
+{application, wombat_discovery,
+ [{description, "Make wombat discover the node after host change. Visit our repository for more information: https://github.com/esl/wombat-discovery"},
+  {vsn, "1.0.1"},
+  {registered, []},
+  {mod, { wombat_discovery_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, ["Erlang Solutions Ltd"]},
+  {licenses, ["MIT"]},
+  {links, []}
+ ]}.
