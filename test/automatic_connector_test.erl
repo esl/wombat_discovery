@@ -8,11 +8,15 @@
 connector_calls_wombat_api_test() ->
 	meck:new(wombat_api, [passthrough]),
 	meck:expect(wombat_api, discover_me, fun(Node,Cookie) -> ok end),
-	%?assertMatch(ok,wombat_api:discover_me(Nodename,Cookie)),
+	?assertMatch(ok,wombat_api:discover_me(node,cookie)),
 	%?debugFmt("~n automatic_connector: ~p", [automatic_connector:do_discover(Nodename,Cookie,Count,Wait)]).
 	%?assert(meck:validate(wombat_api)).
-	%wombat_discovery_sup:init([]),
-	%init_per_testcase(_TestCase, Config)
-%	?assertMatch(ok,automatic_connector:do_discover(wombat,wombat,10,1000)),
+	?assertMatch(ok,automatic_connector:do_discover(wombat,wombat,10,1000)),
+	meck:unload(wombat_api).
+
+connector_calls_wombat_self_and_tyr_again_test() ->
+	meck:new(wombat_api, [passthrough]),
+	meck:expect(wombat_api, discover_me, fun(Node,Cookie) -> no_connection end),
+	?assertMatch(reference(),automatic_connector:do_discover(wombat,wombat,10,1000)),
 	meck:unload(wombat_api).
 	
