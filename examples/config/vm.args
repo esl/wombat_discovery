@@ -1,4 +1,4 @@
--sname examples
+-name 'examples@127.0.0.1'
 
 -setcookie examples_cookie
 

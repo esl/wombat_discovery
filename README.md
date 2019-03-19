@@ -37,6 +37,13 @@ The other way is to configure the `wombat_discovery` application in the sys.conf
 ]
   ```
 
+and change sname to name in vm.args, for example:
+```elang
+-name 'examples@127.0.0.1'
+
+-setcookie examples_cookie
+  ```
+
 Build
 -----
 
