@@ -10,7 +10,13 @@ As Wombat is installed near the application it is hard to orchestrate the discov
 
 ## Installation
 
-This package only works on Elang nodes. 
+This package only works on Elang nodes. To use it just specify the dependency `wombat_discovery` in your rebar.config file.
+
+```erlang
+{deps, [
+	{wombat_discovery, {git, "https://github.com/verebecske/wombat_discovery.git", {branch, "master"}}}
+]}.
+```
 
 ## Usage
 
