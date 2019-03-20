@@ -23,7 +23,7 @@ connector_calls_self_and_tyr_again_test() ->
 	meck:expect(wombat_discovery_app,load_config, [], {a,b,10,0}),
 	meck:expect(wombat_api, discover_me, ['_','_'], no_connection),
 	automatic_connector:start_link(),
-	?debugFmt("~n Meck hisory: ~p", [meck:history(automatic_connector)]),
+	timer:sleep(500),
 	?assertMatch(11, meck:num_calls(automatic_connector,handle_info, [{try_again, '_'}, '_'])),
 	meck:unload(wombat_api),
 	meck:unload(automatic_connector),
