@@ -18,6 +18,7 @@ start(_StartType, _StartArgs) ->
     wombat_discovery_sup:start_link().
 
 %%--------------------------------------------------------------------
+
 stop(_State) ->
     ok.
 
@@ -25,6 +26,7 @@ stop(_State) ->
 %% Internal functions
 %%====================================================================
 
+-spec load_config() -> no_config | {atom(), atom(), integer() , integer()}.
 load_config() ->
 
 	SysNodeName = os:getenv("WOMBAT_NODENAME"),

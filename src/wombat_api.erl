@@ -3,6 +3,7 @@
 -export([discover_me/2]).
 -define(TIMEOUT,15000).
 
+-spec discover_me(NodeName::atom(),Cookie::atom()) -> ok | no_connection | true | term().
 discover_me(NodeName,Cookie) ->
 	erlang:set_cookie(NodeName,Cookie),
 	TargetCookie = erlang:get_cookie(),

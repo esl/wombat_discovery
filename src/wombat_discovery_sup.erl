@@ -36,8 +36,6 @@ init([]) ->
 %%% Internal functions
 %%%=============================================================================
 
--spec child(Mod :: module(),
-            Fun :: atom(),
-            Args :: [term()]) -> supervisor:child_spec().
+-spec child(Mod :: module(), Fun :: atom(), Args :: [term()]) -> supervisor:child_spec().
 child(Mod, Fun, Args) ->
     {Mod, {Mod, Fun, Args}, permanent, 5000, worker, [Mod]}.
