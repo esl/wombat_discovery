@@ -9,12 +9,12 @@
 
 start_link() ->
     Discovery_config = wombat_discovery_app:load_config(),
-    State = #state{discovery_config = Discovery_config},
-    gen_server:start_link({local, automatic_connector}, automatic_connector, State,[]).
+    gen_server:start_link({local, automatic_connector}, automatic_connector, Discovery_config,[]).
 
-init(_Args) ->
+init(Args) ->
+    State = #state{discovery_config = Args},
     self() ! start_discovery,
-    {ok, _Args}.
+    {ok, State}.
 
 handle_info(start_discovery, {State, no_conig}) ->
     io:format("No Wombat Discovery plugin configuration found. ~n"),
