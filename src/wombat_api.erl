@@ -5,7 +5,6 @@
 
 -spec discover_me(NodeName::atom(),Cookie::atom()) -> ok | no_connection | true | term().
 discover_me(NodeName,Cookie) ->
-	%erlang:set_cookie(NodeName,Cookie),
 	wombat_api:set_cookie(NodeName,Cookie),
 	TargetCookie = erlang:get_cookie(),
 	TargetNode = erlang:node(),
