@@ -10,7 +10,7 @@ As Wombat is installed near the application it is hard to orchestrate the discov
 
 ## Installation
 
-This package only works on Erlang nodes. To use it just specify the dependency `wombat_discovery` in your rebar.config file.
+This package only works on Erlang nodes. If you want use in Elixir nodes, please go to https://github.com/esl/wombat-discovery. To use it just specify the dependency `wombat_discovery` in your rebar.config file.
 
 ```erlang
 {deps, [
