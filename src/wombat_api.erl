@@ -13,7 +13,6 @@ discover_me(NodeName,Cookie) ->
 	Request = {auto_discover_node, TargetNode, TargetCookie},
 	wombat_api:call_gen_server(Target,Request).
 
-
 call_gen_server(Target,Request) ->
 	{_, NodeName} = Target,
 	{_, _, TargetCookie} = Request,

@@ -1,5 +1,5 @@
 {application, wombat_discovery,
- [{description, "Make wombat discover the node after host change. Visit our repository for more information: https://github.com/esl/wombat-discovery"},
+ [{description, "Make wombat discover the node after host change. Visit our repository for more information: https://github.com/verebecske/wombat_discovery"},
   {vsn, "1.0.1"},
   {registered, []},
   {mod, { wombat_discovery_app, []}},
