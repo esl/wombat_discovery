@@ -6,8 +6,13 @@
 connector_calls_wombat_api_test() ->
 	meck:new(wombat_api, [passthrough]),
 	meck:expect(wombat_api, discover_me, fun(_Node,_Cookie) -> ok end),
-	?assertMatch(ok,wombat_api:discover_me(node,cookie)),
-	?assertMatch(ok,automatic_connector:do_discover(wombat,wombat,10,1000)),
+	?assertMatch(ok, automatic_connector:do_discover(wombat,wombat,10,1000)),
+	meck:unload(wombat_api).
+
+connector_get_error_from_wombat_api_test() ->
+	meck:new(wombat_api, [passthrough]),
+	meck:expect(wombat_api, discover_me, fun(_Node,_Cookie) -> {error, reason, msg} end),
+	?assertMatch(warning, automatic_connector:do_discover(wombat,wombat,10,1000)),
 	meck:unload(wombat_api).
 
 connector_calls_self_test() ->
