@@ -52,7 +52,7 @@ do_discover(Node, Cookie, Count, Wait) ->
     Reply = wombat_api:discover_me(Node, Cookie),
     case Reply of
       ok -> 
-            lager:info("Node successfully added");
+            lager:info("Node successfully added"), ok;
       {error, already_added, Msg} -> 
             lager:warning("Warning: ~p", [Msg]), 
             lager:warning("Stopping..."), warning;
