@@ -15,6 +15,7 @@
 %%====================================================================
 
 start(_StartType, _StartArgs) ->
+	lager:info("Starting wombat_discovery..."),
     wombat_discovery_sup:start_link().
 
 %%--------------------------------------------------------------------
