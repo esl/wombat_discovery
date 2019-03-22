@@ -46,7 +46,7 @@ handle_call(_Msg, _From, State) ->
 handle_cast(_Msg, State) ->
     {noreply,State}.
 
--spec do_discover(Node::atom(),Cookie::atom(),Count::integer(),Wait::integer()) -> ok | reference().
+-spec do_discover(Node::atom(),Cookie::atom(),Count::integer(),Wait::integer()) -> ok | warning | reference().
 do_discover(Node, Cookie, Count, Wait) ->
    lager:info("Trying to connect to ~p", [Node]),
     Reply = wombat_api:discover_me(Node, Cookie),
