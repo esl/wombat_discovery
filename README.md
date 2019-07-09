@@ -14,7 +14,7 @@ This package only works on Erlang nodes. If you want use in Elixir nodes, please
 
 ```erlang
 {deps, [
-	{wombat_discovery, {git, "https://github.com/verebecske/wombat_discovery.git", {branch, "master"}}}
+	{wombat_discovery, {git, "https://github.com/esl/wombat_discovery.git", {branch, "master"}}}
 ]}.
 ```
 
