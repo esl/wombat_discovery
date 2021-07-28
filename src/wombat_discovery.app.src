@@ -5,8 +5,7 @@
   {mod, { wombat_discovery_app, []}},
   {applications,
    [kernel,
-    stdlib,
-    lager
+    stdlib
    ]},
   {env,[]},
   {modules, []},
